@@ -1,16 +1,14 @@
 const mongoose = require('mongoose');
-const Todo = require('./todo.model');
+const Task = require('./task.model');
 require('dotenv').config();
 
-const connectDb = async () => {
-  return mongoose.connect(process.env.MONGO_URL, {
-    useUnifiedTopology: true,
-    useNewUrlParser: true
-  });
-};
+const connectDb = async () => mongoose.connect(process.env.MONGO_URL, {
+  useUnifiedTopology: true,
+  useNewUrlParser: true
+});
 
 const models = {
-  Todo
+  Task
 };
 
 module.exports = {

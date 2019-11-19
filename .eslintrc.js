@@ -22,7 +22,7 @@ module.exports = {
     ],
     'object-property-newline': 0
   },
-  "parserOptions": {
+  parserOptions: {
     "sourceType": "module"
   }
 };

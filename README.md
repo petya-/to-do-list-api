@@ -38,8 +38,8 @@ npm run dev
 
 ### Documentation
 
-You can find the api documentation at [API-Docs](http://localhost:3000/api-docs)
+You can find the api documentation at [API-Docs](http://localhost:3000/)
 
 ### Deployment
 
-You can find the api hosted on [Heroku](http://localhost:3000/api-docs)
+You can find the api hosted on [Heroku](https://petya-to-do-api.herokuapp.com/)

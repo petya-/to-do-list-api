@@ -1,16 +1,24 @@
 {
   "name": "to-do-list-api",
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "description": "Simple to-do application.",
   "private": true,
+  "author": "Petya Buchkova",
   "scripts": {
     "start": "node ./bin/www"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
-    "express": "~4.16.1",
+    "express": "^4.16.4",
     "http-errors": "~1.6.3",
     "jade": "~1.11.0",
+    "mongoose": "^5.7.11",
     "morgan": "~1.9.1"
+  },
+  "devDependencies": {
+    "eslint": "^6.6.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.18.2"
   }
 }

@@ -6,7 +6,7 @@
   "author": "Petya Buchkova",
   "scripts": {
     "start": "node ./bin/www",
-    "dev": "nodemon --watch app server.js",
+    "dev": "nodemon ./bin/www --watch",
     "lint": "eslint ./ --fix"
   },
   "dependencies": {

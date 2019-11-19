@@ -10,6 +10,9 @@ const app = express();
 
 // API logs
 app.use(logger('dev'));
+// enable cors
+app.use(cors());
+
 app.disable('x-powered-by');
 
 app.use(express.json());
@@ -29,9 +32,6 @@ app.use('/', require('./routes'));
 app.use((req, res, next) => {
   next(createError(404));
 });
-
-// enable cors
-app.use(cors());
 
 // error handler
 app.use((err, req, res, next) => {

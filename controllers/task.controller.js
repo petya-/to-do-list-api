@@ -1,4 +1,6 @@
-const { models } = require('../models/config');
+const {
+  models
+} = require('../models/config');
 
 const index = async () => {
   try {
@@ -10,7 +12,9 @@ const index = async () => {
   }
 };
 
-const create = async ({ description }) => {
+const create = async ({
+  description
+}) => {
   try {
     const task = new models.Task({
       description
@@ -23,7 +27,10 @@ const create = async ({ description }) => {
   }
 };
 
-const update = async (_id, { description, completed }) => {
+const update = async (_id, {
+  description,
+  completed
+}) => {
   try {
     const task = await models.Task.findOne({
       _id
@@ -38,8 +45,20 @@ const update = async (_id, { description, completed }) => {
   }
 };
 
+const deleteTask = async (_id) => {
+  try {
+    await models.Task.remove({
+      _id
+    });
+    return {};
+  } catch (error) {
+    throw new Error('There was an error while deleting the task.');
+  }
+};
+
 module.exports = {
   index,
   create,
-  update
+  update,
+  deleteTask
 };

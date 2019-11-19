@@ -57,7 +57,7 @@
     },
     "/tasks/{id}": {
       "put": {
-        "summary": "Update an existing task",
+        "summary": "Update an existing task by _id",
         "description": "Returns the updated task.",
         "responses": {
           "200": {
@@ -73,6 +73,21 @@
                 }
               }
 
+            }
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete an existing task by _id",
+        "description": "Returns empty object",
+        "responses": {
+          "200": {
+            "description": "An empty",
+            "schema": {
+              "type": "object",
+              "properties": {
+
+              }
             }
           }
         }

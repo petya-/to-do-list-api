@@ -28,4 +28,12 @@ router.put('/:id', (req, res, next) => {
     .catch(next);
 });
 
+// DELETE: /tasks/:id
+router.delete('/:id', (req, res, next) => {
+  taskController
+    .deleteTask(req.params.id)
+    .then(result => res.json(result))
+    .catch(next);
+});
+
 module.exports = router;

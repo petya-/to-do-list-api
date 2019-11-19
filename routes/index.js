@@ -1,6 +1,6 @@
 const router = require('express').Router();
 
-router.use('/tasks', require('./task.router'));
+router.use('/api/v1/tasks', require('./task.router'));
 
 /* GET home page. */
 router.get('/', (req, res, next) =>

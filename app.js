@@ -20,9 +20,9 @@ app.use(
 app.use(cookieParser());
 
 // documentation route
-app.use('/', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 // Import routes
-app.use('/api/v1', require('./routes'));
+app.use('/', require('./routes'));
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {

@@ -5,10 +5,15 @@ const logger = require('morgan');
 
 const app = express();
 
+// API logs
 app.use(logger('dev'));
+app.disable('x-powered-by');
+
 app.use(express.json());
 app.use(
-  express.urlencoded({extended: false})
+  express.urlencoded({
+    extended: false
+  })
 );
 app.use(cookieParser());
 
@@ -22,8 +27,10 @@ app.use((req, res, next) => {
 
 // error handler
 app.use((err, req, res, next) => {
-  res.status(err.status || 500).send({message: 'error',
-    error: err.message});
+  res.status(err.status || 500).send({
+    message: 'error',
+    error: err.message
+  });
 });
 
 module.exports = app;

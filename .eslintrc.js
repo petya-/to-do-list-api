@@ -1,6 +1,5 @@
 module.exports = {
-  extends: ["eslint:recommended", 'plugin:prettier/recommended'],
-
+  extends: ["airbnb-base", 'plugin:prettier/recommended'],
   plugins: ['prettier'],
   env: {
     browser: true,
@@ -9,18 +8,6 @@ module.exports = {
   },
   rules: {
     'prettier/prettier': 'error',
-    'function-paren-newline': 0,
-    'function-call-argument-newline': 0,
-    'object-curly-newline': [
-      'error',
-      {
-        ObjectExpression: 'never',
-        ObjectPattern: 'never',
-        ImportDeclaration: 'never',
-        ExportDeclaration: 'never'
-      }
-    ],
-    'object-property-newline': 0
   },
   parserOptions: {
     "sourceType": "module"

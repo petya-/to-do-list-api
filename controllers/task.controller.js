@@ -2,10 +2,7 @@ const {
   models
 } = require('../models/config');
 
-const index = async ({
-  name,
-  completed
-}) => {
+const index = async () => {
   try {
     const tasks = await models.Task.find();
 
@@ -14,16 +11,16 @@ const index = async ({
       data: tasks
     };
   } catch (error) {
-    throw error;
+    throw new Error('There was an error getting the tasks. Please try again');
   }
 };
 
-const create = async (
-  data) => {
+const create = async ({
+  description
+}) => {
   try {
-    console.log(data);
     const task = new models.Task({
-      description: data
+      description
     });
     await task.save();
 
@@ -32,12 +29,29 @@ const create = async (
       data: task
     };
   } catch (error) {
-    throw error;
+    throw new Error('There was an error while creating a task.');
   }
 };
 
-const update = async () => {
-  return true;
+const update = async (_id, {
+  description,
+  completed
+}) => {
+  try {
+    const task = await models.Task.findOne({
+      _id
+    });
+
+    task.description = description;
+    task.completed = completed;
+    await task.save();
+    return {
+      message: 'success',
+      data: task
+    };
+  } catch (error) {
+    throw new Error('There was an error while editing the task.');
+  }
 };
 
 module.exports = {

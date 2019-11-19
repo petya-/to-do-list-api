@@ -4,6 +4,7 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const swaggerUi = require('swagger-ui-express');
 const swaggerDocument = require('./swagger.json');
+const cors = require('cors');
 
 const app = express();
 
@@ -30,7 +31,7 @@ app.use((req, res, next) => {
 });
 
 // enable cors
-app.use(cors())
+app.use(cors());
 
 // error handler
 app.use((err, req, res, next) => {

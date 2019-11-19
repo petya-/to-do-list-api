@@ -3,8 +3,8 @@ const express = require('express');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const swaggerUi = require('swagger-ui-express');
-const swaggerDocument = require('./swagger.json');
 const cors = require('cors');
+const swaggerDocument = require('./swagger.json');
 
 const app = express();
 

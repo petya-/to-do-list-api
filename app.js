@@ -29,6 +29,9 @@ app.use((req, res, next) => {
   next(createError(404));
 });
 
+// enable cors
+app.use(cors())
+
 // error handler
 app.use((err, req, res, next) => {
   res.status(err.status || 500).send({
